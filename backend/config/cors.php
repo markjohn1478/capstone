@@ -21,9 +21,13 @@ return [
 
     'allowed_origins' => ['*'],
 
-    'allowed_origins' => [
-        'http://localhost:3000','http://192.168.1.7:3000','http://localhost:8081','http://192.168.1.7:8081', 
-    ],
+    // 'allowed_origins' => [
+    //     'http://localhost:3000',
+    //     'http://192.168.1.7:3000',
+    //     'http://localhost:8081',
+    //     'http://192.168.1.7:8081',
+    //     'exp://10.26.101.248:8081',
+    // ],
 
     'allowed_origins_patterns' => [],
 

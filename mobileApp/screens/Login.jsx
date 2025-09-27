@@ -34,7 +34,6 @@ export default function Login() {
   useEffect(() => {
     const init = async () => {
       try {
-        // Log the state of AsyncStorage values for debugging
         const storedRemember = await AsyncStorage.getItem("rememberMe");
         const storedEmail = await AsyncStorage.getItem("email");
         const storedPassword = await AsyncStorage.getItem("password");
@@ -73,6 +72,7 @@ export default function Login() {
     try {
       setLoading(true);
       const res = await api.post("/login", { email, password });
+      console.log("Login response:", res.data);
       const user = res.data.user;
 
       if (!user?.role) {
@@ -105,6 +105,8 @@ export default function Login() {
       setLoginError("Invalid email or password.");
       setEmailError(true);
       setPasswordError(true);
+
+      console.error("Login error:", err); 
     } finally {
       setLoading(false);
     }
